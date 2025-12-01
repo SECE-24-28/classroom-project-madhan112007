@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Madhan S — AI & Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Madhan S — AI/ML, Web & Embedded Dev. Projects, certifications, achievements, and contact." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neon: '#00FFE0',
+            primary: '#7c3aed',
+            accent: '#0ea5a4'
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { --glass-bg: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.06); }
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-border);
+    }
+    .accent-gradient {
+      background: linear-gradient(90deg,#7c3aed 0%, #0ea5a4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .neon {
+      text-shadow: 0 0 8px rgba(0,255,224,0.06), 0 0 18px rgba(124,58,237,0.04);
+    }
+    .focus-ring:focus { outline: 3px solid rgba(56,189,248,0.12); outline-offset: 2px; }
+    pre.code {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-200 antialiased selection:bg-accent selection:text-slate-900">
+  <!-- NAV -->
+  <header class="fixed top-4 left-0 right-0 z-40 px-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-700 to-cyan-500 flex items-center justify-center text-slate-900 font-extrabold">MS</div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold">Madhan S</div>
+          <div class="text-xs text-slate-400">AI · Web · Embedded</div>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <nav class="hidden md:flex gap-4 text-sm text-slate-300">
+          <a href="#about" class="hover:text-white transition">About</a>
+          <a href="#projects" class="hover:text-white transition">Projects</a>
+          <a href="#skills" class="hover:text-white transition">Skills</a>
+          <a href="#certs" class="hover:text-white transition">Certs</a>
+          <a href="#contact" class="hover:text-white transition">Contact</a>
+        </nav>
+
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-md focus-ring glass" title="Toggle dark/light">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1M4.22 4.22l.7.7M18.36 18.36l.7.7M1 12h1m20 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7M12 7a5 5 0 100 10 5 5 0 000-10z" />
+          </svg>
+        </button>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-lg px-3 py-2 bg-gradient-to-r from-indigo-600 to-teal-400 text-slate-900 text-sm shadow hover:opacity-95 transition">Hire / Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <!-- HERO -->
+    <section id="hero" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-xs rounded-full px-3 py-1 bg-gradient-to-r from-indigo-700/30 to-cyan-500/20 text-slate-200 w-max mb-4">Developer • Problem Solver • Maker</p>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            <span class="text-slate-200">Hi, I'm</span>
+            <br />
+            <span class="accent-gradient">Madhan S</span>
+            <span class="ml-2 text-sm inline-block bg-slate-800/40 px-2 py-1 rounded-md text-slate-300">B.Tech AI-DS</span>
+          </h1>
+
+          <p class="mt-4 text-slate-400 max-w-xl">
+            AI & Embedded systems developer who ships reliable prototypes and production-ready demos. Work spans portable embedded systems (weighing platforms), full-stack web platforms, and TensorFlow models for image classification.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <a href="#projects" class="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-600 to-teal-400 text-slate-900 text-sm shadow">See Projects</a>
+            <a href="mailto:madhan.s2024aids@sece.ac.in" class="px-4 py-2 rounded-md border border-slate-700 text-sm hover:bg-slate-800 transition">Email Me</a>
+            <button id="copyPhone" data-copy="+91 9363752394" class="px-3 py-2 rounded-md text-sm border border-slate-700">Copy Phone</button>
+            <a href="https://github.com/madhan112007" target="_blank" class="px-3 py-2 rounded-md text-sm bg-slate-800/40">GitHub</a>
+          </div>
+
+          <!-- quick stats -->
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="p-4 rounded-lg glass">
+              <div class="text-2xl font-bold counter" data-target="320">0</div>
+              <div class="text-xs text-slate-400 mt-1">CodeChef Solved</div>
+            </div>
+            <div class="p-4 rounded-lg glass">
+              <div class="text-2xl font-bold counter" data-target="1200">0</div>
+              <div class="text-xs text-slate-400 mt-1">SkillRack Problems</div>
+            </div>
+            <div class="p-4 rounded-lg glass">
+              <div class="text-2xl font-bold">200+</div>
+              <div class="text-xs text-slate-400 mt-1">LeetCode solved</div>
+            </div>
+            <div class="p-4 rounded-lg glass">
+              <div class="text-2xl font-bold">8.68</div>
+              <div class="text-xs text-slate-400 mt-1">B.Tech CGPA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="p-6 rounded-2xl glass shadow-xl overflow-hidden">
+            <div class="flex items-start gap-4">
+              <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-indigo-600 to-cyan-400 flex items-center justify-center text-slate-900 font-extrabold">MS</div>
+              <div>
+                <h3 class="text-lg font-semibold">Madhan S</h3>
+                <p class="text-xs text-slate-400">B.Tech — Artificial Intelligence & Data Science</p>
+                <div class="mt-2 text-sm text-slate-300">AI/ML • Embedded Systems • Web Development</div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 gap-3">
+              <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+                <div class="text-xs text-slate-400">Phone</div>
+                <div class="flex items-center gap-2">
+                  <span class="font-medium">+91 9363752394</span>
+                  <button data-copy="+91 9363752394" class="ml-auto px-2 py-1 text-xs rounded bg-slate-800/60 copy-btn">Copy</button>
+                </div>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+                <div class="text-xs text-slate-400">Email</div>
+                <div class="flex items-center gap-2">
+                  <span class="font-medium">madhan.s2024aids@sece.ac.in</span>
+                  <button data-copy="madhan.s2024aids@sece.ac.in" class="ml-auto px-2 py-1 text-xs rounded bg-slate-800/60 copy-btn">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-xs text-slate-400">Profiles</div>
+            <div class="mt-2 flex gap-2">
+              <a target="_blank" href="https://github.com/madhan112007" class="px-3 py-1 rounded bg-gradient-to-r from-indigo-700 to-cyan-400 text-slate-900 text-sm">GitHub</a>
+              <a target="_blank" href="https://www.linkedin.com/in/madhan-s-727b85332" class="px-3 py-1 rounded bg-slate-800/60 text-sm">LinkedIn</a>
+            </div>
+
+            <div class="mt-4 text-xs text-slate-400">Quick bio</div>
+            <div class="mt-2 text-sm text-slate-300">
+              I develop embedded & AI solutions that bridge sensors and models to usable apps. I enjoy competitive programming and fast prototyping.
+            </div>
+          </div>
+
+          <!-- floating badge -->
+          <div class="absolute -right-6 top-8 animate-float">
+            <div class="p-2 rounded-xl glass text-xs">Portable Cargo • Web • TensorFlow</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-bold">About</h2>
+          <p class="mt-3 text-slate-400 max-w-3xl">
+            B.Tech student in Artificial Intelligence & Data Science at Sri Eshwar College of Engineering (2024–2028). Strong foundation in C/C++/Python and hands-on experience building embedded sensor systems, web platforms, and CNN-based image classifiers.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold">Selected Projects</h3>
+          <ul class="mt-3 space-y-3">
+            <li class="p-3 rounded-lg glass">
+              <div class="flex justify-between items-start">
+                <div>
+                  <strong>Portable Cargo Weigher</strong>
+                  <div class="text-xs text-slate-400">Embedded • Sensors • Calibration</div>
+                  <div class="text-sm text-slate-300 mt-1">Developing a portable real-time cargo weighing system using load cells and microcontrollers. Focus on measurement accuracy, calibration, and a user-friendly display for trucks.</div>
+                </div>
+                <button class="ml-4 px-3 py-2 text-sm rounded bg-gradient-to-r from-indigo-600 to-teal-400 open-project" data-title="Portable Cargo Weigher" data-desc="Portable system for real-time cargo weight monitoring using load cells and microcontrollers; accurate measurement, calibration, and display.">Details</button>
+              </div>
+            </li>
+
+            <li class="p-3 rounded-lg glass">
+              <div class="flex justify-between items-start">
+                <div>
+                  <strong>Link Life</strong>
+                  <div class="text-xs text-slate-400">Web • Community</div>
+                  <div class="text-sm text-slate-300 mt-1">Web platform connecting blood donors with recipients using location-based matching and real-time notifications to improve emergency response.</div>
+                </div>
+                <button class="ml-4 px-3 py-2 text-sm rounded bg-gradient-to-r from-indigo-600 to-teal-400 open-project" data-title="Link Life" data-desc="Web platform connecting blood donors with recipients via location-based matching and notifications.">Details</button>
+              </div>
+            </li>
+
+            <li class="p-3 rounded-lg glass">
+              <div class="flex justify-between items-start">
+                <div>
+                  <strong>AI Image Classification (TensorFlow)</strong>
+                  <div class="text-xs text-slate-400">ML • CV</div>
+                  <div class="text-sm text-slate-300 mt-1">CNN-based models for object recognition: preprocessing pipelines, training, evaluation and deployment-practices for scalable, high-accuracy classification.</div>
+                </div>
+                <button class="ml-4 px-3 py-2 text-sm rounded bg-gradient-to-r from-indigo-600 to-teal-400 open-project" data-title="AI Image Classification" data-desc="Built CNN models for object recognition with training & evaluation pipelines using TensorFlow.">Details</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="p-4 rounded-lg glass">
+          <h4 class="text-sm font-semibold">Education</h4>
+          <div class="mt-2 text-sm text-slate-300">
+            <div><strong>B.Tech</strong> — Artificial Intelligence & Data Science</div>
+            <div class="text-xs text-slate-400">Sri Eshwar College of Engineering (2024–2028) — CGPA: 8.68</div>
+            <div class="mt-3"><strong>HSC</strong> — Sowdaambika Matric Higher Secondary School — 90% (2021–2022)</div>
+            <div class="mt-2"><strong>SSLC</strong> — Oxford Matric Higher Secondary School — 75.2% (2022–2024)</div>
+          </div>
+
+          <h4 class="mt-6 text-sm font-semibold">Certifications</h4>
+          <ul class="mt-2 text-sm text-slate-300 space-y-1">
+            <li>Oracle Java Foundations — 2025</li>
+            <li>Programming in Python — NPTEL (2025)</li>
+            <li>Python (Basic) — HackerRank (2024)</li>
+            <li>Robotics & AI — Great Learning (2024)</li>
+            <li>IITB: C & C++ Certification (2024)</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-bold">Skills & Tools</h2>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-4 rounded-lg glass">
+          <h4 class="font-semibold">Programming</h4>
+          <div class="mt-2 text-sm text-slate-300">C · C++ · Python · JavaScript · HTML · CSS · Java · SQL</div>
+        </div>
+
+        <div class="p-4 rounded-lg glass">
+          <h4 class="font-semibold">Web & DB</h4>
+          <div class="mt-2 text-sm text-slate-300">React.js · MySQL · MongoDB · PHP · PostgreSQL</div>
+        </div>
+
+        <div class="p-4 rounded-lg glass">
+          <h4 class="font-semibold">AI & Data</h4>
+          <div class="mt-2 text-sm text-slate-300">Pandas · NumPy · Matplotlib · TensorFlow · DataViz (Seaborn, Power BI)</div>
+        </div>
+
+        <div class="p-4 rounded-lg glass">
+          <h4 class="font-semibold">Tools</h4>
+          <div class="mt-2 text-sm text-slate-300">VS Code · Git · GitHub · Jupyter · Colab · Blender · Unity</div>
+        </div>
+
+        <div class="p-4 rounded-lg glass">
+          <h4 class="font-semibold">Core Concepts</h4>
+          <div class="mt-2 text-sm text-slate-300">DBMS · OOP · Embedded Systems</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+    <section id="certs" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="p-4 rounded-lg glass">
+          <h3 class="text-lg font-semibold">Certifications</h3>
+          <ul class="mt-3 text-sm text-slate-300 space-y-2">
+            <li>Oracle Java Foundations</li>
+            <li>Programming in Python — NPTEL</li>
+            <li>Python (Basic) — HackerRank</li>
+            <li>Robotics & AI — Great Learning</li>
+            <li>IITB Certificate on C & C++</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-lg glass">
+          <h3 class="text-lg font-semibold">Achievements</h3>
+          <ul class="mt-3 text-sm text-slate-300 space-y-2">
+            <li>Qualified SAP Hackfest Final (from 4000+ teams)</li>
+            <li>Participant — BIT Hackathon 2025 (8-hour hack)</li>
+            <li>8th place in CTF event (Cyber Security) — 2024</li>
+            <li>Winners — Createathon 2024</li>
+            <li>4th runner-up — Selfie Hackathon (100+ teams)</li>
+            <li>Competitive programming records: CodeChef 320+, SkillRack 1200+, LeetCode 200+</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="p-6 rounded-2xl glass">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 class="text-2xl font-bold">Get in touch</h2>
+            <p class="text-slate-400 mt-2">Available for internships, freelance projects, and collaborations. DM on LinkedIn or email me.</p>
+            <div class="mt-4 text-sm text-slate-300">
+              <div><strong>Phone:</strong> +91 9363752394</div>
+              <div><strong>Email:</strong> madhan.s2024aids@sece.ac.in</div>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <a target="_blank" href="https://github.com/madhan112007" class="px-3 py-2 rounded bg-slate-800/60">GitHub</a>
+              <a target="_blank" href="https://www.linkedin.com/in/madhan-s-727b85332" class="px-3 py-2 rounded bg-gradient-to-r from-indigo-600 to-teal-400 text-slate-900">LinkedIn</a>
+            </div>
+          </div>
+
+          <form id="contactForm" class="flex-1 min-w-[260px]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input required name="name" placeholder="Your name" class="p-3 rounded border border-slate-800 bg-slate-900 focus-ring" />
+              <input required name="email" type="email" placeholder="Your email" class="p-3 rounded border border-slate-800 bg-slate-900 focus-ring" />
+            </div>
+            <input name="subject" placeholder="Subject" class="mt-3 p-3 rounded border border-slate-800 bg-slate-900 focus-ring w-full" />
+            <textarea required name="message" placeholder="Message" rows="4" class="mt-3 p-3 rounded border border-slate-800 bg-slate-900 focus-ring w-full"></textarea>
+            <div class="mt-3 flex gap-2">
+              <button type="submit" class="px-4 py-2 rounded bg-gradient-to-r from-indigo-600 to-teal-400 text-slate-900">Send message</button>
+              <button type="button" id="clearForm" class="px-4 py-2 rounded border">Clear</button>
+            </div>
+            <p id="contactStatus" class="mt-2 text-sm text-slate-400"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-500">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>© <span id="year"></span> Madhan S — Built with Tailwind</div>
+        <div class="flex gap-3">
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+          <a href="mailto:madhan.s2024aids@sece.ac.in" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+    <div class="max-w-3xl w-full bg-slate-900 rounded-2xl p-6 border border-slate-800">
+      <div class="flex justify-between items-start">
+        <div>
+          <h3 id="modalTitle" class="text-xl font-bold">Project Title</h3>
+          <div id="modalTags" class="text-xs text-slate-400 mt-1">Tags</div>
+        </div>
+        <button id="closeModal" class="p-2 rounded bg-slate-800 focus-ring">Close</button>
+      </div>
+      <p id="modalDesc" class="mt-4 text-slate-300"></p>
+      <div class="mt-6 flex gap-2">
+        <a id="modalRepo" href="#" target="_blank" class="px-4 py-2 rounded border">Repo</a>
+        <a id="modalLive" href="#" target="_blank" class="px-4 py-2 rounded bg-gradient-to-r from-indigo-600 to-teal-400 text-slate-900">Live / Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JS -->
+  <script>
+    // utilities
+    const $ = (s, ctx=document) => ctx.querySelector(s);
+    const $$ = (s, ctx=document) => Array.from(ctx.querySelectorAll(s));
+
+    // theme toggle (persist)
+    const themeToggle = $('#themeToggle');
+    const saved = localStorage.getItem('dark');
+    const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === null ? prefers : saved === '1') document.documentElement.classList.add('dark');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('dark', isDark ? '1' : '0');
+    });
+
+    // counters
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(el => {
+        const target = +el.dataset.target || 0;
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 80));
+        const t = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target + (target >= 1000 ? '+' : '');
+            clearInterval(t);
+          } else el.textContent = current;
+        }, 10);
+      });
+    }
+    const hero = $('#hero');
+    new IntersectionObserver((e) => { if (e[0].isIntersecting) { animateCounters(); } }, {threshold:0.3}).observe(hero);
+
+    // copy buttons
+    $$('.copy-btn').forEach(b => b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent='Copied'; setTimeout(()=>b.textContent='Copy',1500);} catch { alert('Copy failed'); }
+    }));
+    $('#copyPhone').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText('+91 9363752394'); $('#copyPhone').textContent='Copied'; setTimeout(()=>$('#copyPhone').textContent='Copy Phone',1500); } catch { alert('Copy failed'); }
+    });
+
+    // project modal
+    const modal = $('#projectModal');
+    const modalTitle = $('#modalTitle'), modalDesc = $('#modalDesc'), modalTags = $('#modalTags');
+    $$('.open-project').forEach(btn => btn.addEventListener('click', () => {
+      modalTitle.textContent = btn.dataset.title || 'Project';
+      modalDesc.textContent = btn.dataset.desc || '';
+      modalTags.textContent = btn.dataset.tags || '';
+      modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow='hidden';
+    }));
+    $('#closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if (e.target === modal) closeModal(); });
+    function closeModal(){ modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow=''; }
+
+    // contact form - mailto fallback
+    const contactForm = $('#contactForm'), contactStatus = $('#contactStatus');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(contactForm);
+      if (!fd.get('name') || !fd.get('email') || !fd.get('message')) { contactStatus.textContent='Please fill required fields.'; return; }
+      contactStatus.textContent='Preparing email...';
+      const subject = encodeURIComponent(fd.get('subject') || 'Portfolio Contact');
+      const body = encodeURIComponent(`Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\n\n${fd.get('message')}`);
+      window.location.href = `mailto:madhan.s2024aids@sece.ac.in?subject=${subject}&body=${body}`;
+    });
+    $('#clearForm').addEventListener('click', ()=>{ contactForm.reset(); contactStatus.textContent=''; });
+
+    // fill year
+    $('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
