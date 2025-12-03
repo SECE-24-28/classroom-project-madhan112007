@@ -1,0 +1,14 @@
+.Quotes{
+    font-size: 20px;
+    color: rgb(1, 15, 1);
+}
+@keyframes colorchange {
+    0% {color: red;}
+    25% {color: blue;}
+    50% {color: green;}
+    75% {color: yellow;}
+    100% {color: rgb(67, 183, 226);}
+}
+.Quotes {
+            animation: colorchange 2s infinite;
+        }
