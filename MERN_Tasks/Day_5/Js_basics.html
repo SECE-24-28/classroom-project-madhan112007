@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics</title>
+
+    <!-- Internal CSS (optional) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Basics Example</h1>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <div id="output"></div>
+
+    <!-- JavaScript Code -->
+    <script>
+        function showMessage() {
+            // Display simple message
+            document.getElementById("output").innerHTML = 
+                "<b>Hello! This text is generated using JavaScript.</b>";
+        }
+
+        // Basic JS Variables
+        let a = 10;
+        let b = 20;
+        let sum = a + b;
+
+        console.log("Sum of a + b =", sum);  // Print in browser console
+    </script>
+
+</body>
+</html>
